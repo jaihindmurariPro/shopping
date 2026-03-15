@@ -1,0 +1,59 @@
+.page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  background: var(--bg);
+}
+
+.content {
+  text-align: center;
+  max-width: 480px;
+  animation: fadeIn 0.4s ease;
+}
+
+.errorCode {
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1;
+  opacity: 0.15;
+  position: relative;
+  top: 0;
+}
+
+.illustration {
+  font-size: 80px;
+  margin-top: -40px;
+  position: relative;
+  animation: wobble 2s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 20px 0 12px;
+}
+
+.desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

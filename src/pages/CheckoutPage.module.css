@@ -1,0 +1,252 @@
+.page { padding: 0 0 48px; min-height: 100vh; background: var(--bg); }
+
+.checkoutHeader {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.stepActive .stepNum { background: var(--primary); color: white; }
+.stepDone .stepNum { background: var(--accent-green); color: white; }
+
+.stepLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.stepActive .stepLabel, .stepDone .stepLabel { color: var(--text-primary); }
+
+.stepLine {
+  width: 60px;
+  height: 2px;
+  background: var(--border);
+  margin: 0 8px;
+  transition: background var(--transition);
+}
+.stepLineDone { background: var(--accent-green); }
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.main { display: flex; flex-direction: column; gap: 16px; }
+
+.panel {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  padding: 28px;
+}
+
+.panelTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Address */
+.addressList { display: flex; flex-direction: column; gap: 12px; }
+
+.addrCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.addrSelected { border-color: var(--primary); background: var(--primary-light); }
+
+.addrCard input[type="radio"] {
+  margin-top: 3px;
+  accent-color: var(--primary);
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.addrInfo { flex: 1; }
+.addrName { font-size: 15px; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.addrTag { font-size: 11px; font-weight: 600; background: var(--bg); color: var(--text-muted); padding: 2px 8px; border-radius: var(--radius-full); border: 1px solid var(--border); }
+.addrLine { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.addrPhone { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+.defaultTag { display: inline-block; font-size: 11px; font-weight: 600; color: var(--accent-green); background: #e8f5e9; padding: 2px 8px; border-radius: var(--radius-sm); margin-top: 6px; }
+
+.addAddrBtn {
+  padding: 14px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  text-align: center;
+  width: 100%;
+  transition: all var(--transition);
+}
+.addAddrBtn:hover { border-color: var(--primary); background: var(--primary-light); }
+
+.newAddrForm { background: var(--bg); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border); }
+.newAddrTitle { font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.formField { display: flex; flex-direction: column; gap: 6px; }
+.formField label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; }
+.formField input {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+  color: var(--text-primary);
+}
+.formField input:focus { border-color: var(--primary); }
+
+.nextBtn { min-width: 200px; justify-content: center; }
+
+/* Order items */
+.orderItems { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.orderItem { display: flex; align-items: center; gap: 16px; padding: 16px; border-bottom: 1px solid var(--border); }
+.orderItem:last-child { border-bottom: none; }
+.orderImg { width: 64px; height: 76px; object-fit: cover; border-radius: var(--radius-sm); flex-shrink: 0; }
+.orderInfo { flex: 1; }
+.orderBrand { font-size: 14px; font-weight: 700; }
+.orderName { font-size: 12px; color: var(--text-secondary); margin: 3px 0; }
+.orderMeta { display: flex; gap: 12px; font-size: 12px; color: var(--text-muted); }
+.orderPrice { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+
+/* Payment */
+.payMethods { display: flex; flex-direction: column; gap: 10px; }
+.payMethod {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.paySelected { border-color: var(--primary); background: var(--primary-light); }
+.payMethod input[type="radio"] { accent-color: var(--primary); width: 18px; height: 18px; flex-shrink: 0; }
+.payIcon { font-size: 22px; }
+.payLabel { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+.payDesc { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.payDetail { display: flex; gap: 10px; margin-top: 16px; }
+.upiInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+}
+.upiInput:focus { border-color: var(--primary); }
+.verifyBtn { padding: 10px 20px; background: var(--primary); color: white; border-radius: var(--radius-sm); font-size: 13px; font-weight: 700; }
+
+.cardForm { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.cardInput {
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+  width: 100%;
+}
+.cardInput:focus { border-color: var(--primary); }
+
+.secureNote {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--accent-green);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Sidebar summary */
+.sidebar { position: sticky; top: 80px; align-self: start; display: flex; flex-direction: column; gap: 16px; }
+.summaryCard { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+.summaryTitle { padding: 14px 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+.summaryRows { padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+.summaryRow { display: flex; justify-content: space-between; font-size: 14px; color: var(--text-secondary); }
+.summaryDivider { height: 1px; background: var(--border); }
+.totalRow { font-size: 16px; font-weight: 800; color: var(--text-primary); }
+.saveBanner { padding: 10px 20px; background: #e8f5e9; font-size: 12px; font-weight: 600; color: var(--accent-green); border-top: 1px solid var(--border); }
+.safeNote { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--text-muted); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; }
+  .steps { gap: 0; }
+  .stepLabel { display: none; }
+}
+
+@media (max-width: 600px) {
+  .panel { padding: 16px; }
+  .formGrid { grid-template-columns: 1fr; }
+}

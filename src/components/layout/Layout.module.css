@@ -1,0 +1,17 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  padding-top: calc(var(--nav-height) + var(--subnav-height));
+}
+
+@media (max-width: 768px) {
+  .main {
+    padding-top: var(--nav-height);
+    padding-bottom: 64px; /* mobile nav height */
+  }
+}

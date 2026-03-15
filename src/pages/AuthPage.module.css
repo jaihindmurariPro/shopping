@@ -1,0 +1,156 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 24px 16px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  max-width: 900px;
+  width: 100%;
+  animation: scaleIn 0.3s ease;
+}
+
+.left {
+  background: linear-gradient(135deg, var(--secondary) 0%, #0f3460 100%);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+}
+
+.brandTag {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+.perks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.perks li {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.right {
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.right h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field input {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color var(--transition);
+  background: var(--surface);
+}
+
+.field input:focus {
+  border-color: var(--primary);
+}
+
+.inputError {
+  border-color: var(--primary) !important;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.terms {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.terms a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.submitBtn {
+  height: 48px;
+  font-size: 15px !important;
+  letter-spacing: 1px;
+}
+
+.switchLink {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+}
+
+.switchLink:hover {
+  background: var(--primary-light);
+}
+
+@media (max-width: 700px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    padding: 32px 24px;
+  }
+
+  .right {
+    padding: 32px 24px;
+  }
+}
